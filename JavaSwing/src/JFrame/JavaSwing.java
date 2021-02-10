@@ -1,5 +1,5 @@
 
-package javaswing;
+package JFrame;
 import javax.swing.JOptionPane;
 public class JavaSwing {
 
