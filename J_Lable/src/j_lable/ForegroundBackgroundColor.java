@@ -1,51 +1,61 @@
-
 package j_lable;
 
 import java.awt.Color;
 import javax.swing.JFrame;
 import java.awt.Container;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class ForegroundBackgroundColor  extends JFrame{
-    
+public class ForegroundBackgroundColor extends JFrame {
+
     private Container c;
+    private ImageIcon ion;
     private Font f;
-    private JLabel userlabel1, userlabel2;
-    ForegroundBackgroundColor(){
-        initComponents();
+    private JLabel userlabel1, passlabel1;
+
+    ForegroundBackgroundColor() {
+        initcomponent();
+
     }
-    
-    public void initComponents(){
+
+    public void initcomponent() {
         c = this.getContentPane();
         c.setLayout(null);
         c.setBackground(Color.yellow);
-        f = new Font("Arial", Font.BOLD, 14);
+        f = new Font("Arial", Font.BOLD, 16);
         userlabel1 = new JLabel();
-        userlabel1.setText("Enter Name");
-        userlabel1.setBounds(50,20,200,50);
-        userlabel1.setForeground(Color.green);
+        userlabel1.setText("Enter name");
+        userlabel1.setBounds(50, 20, 200, 50);
+        userlabel1.setForeground(Color.red);
+        userlabel1.setBackground(Color.green);
         userlabel1.setOpaque(true);
-        userlabel1.setBackground(Color.yellow);
-          userlabel1.setFont(f);
-        c.add(userlabel1);
-        userlabel2 = new JLabel();
-        userlabel2.setText("Enter your Passward");
-        userlabel2.setBounds(50,80,120,120);
-        userlabel2.setForeground(Color.yellow);
-        userlabel2.setFont(f);
-        c.add(userlabel2);
+        userlabel1.setFont(f);
+        userlabel1.setToolTipText("enter name please");
         
+        //String s = userlabel.getToolTipText();
+        System.out.println(" userlaebl1.getText()");
+        c.add(userlabel1);
+        passlabel1 = new  JLabel("Enter passward");
+        //passlabel1.setText("Enter passward ");
+        passlabel1.setBounds(50, 80, 150, 50);
+        passlabel1.setBackground(Color.red);
+        passlabel1.setForeground(Color.GRAY);
+        passlabel1.setOpaque(true);
+        passlabel1.setToolTipText("please enter passward");
+        passlabel1.setFont(f);
+        c.add(passlabel1);
+        
+
     }
+
     public static void main(String[] args) {
-        FrontCreate frame = new FrontCreate();
+        ForegroundBackgroundColor frame = new ForegroundBackgroundColor();
         frame.setVisible(true);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setBounds(400, 300, 400, 300);
-    frame.setTitle("New Front Style");
-    
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setBounds(200, 50, 400, 300);
+        frame.setTitle("Frame Demo");
+        frame.setResizable(false);
+
     }
- 
 }
-
-
